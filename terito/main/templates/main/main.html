@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Essay Generator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Roboto+Slab:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #C69464;       /* Warm brown */
+            --secondary-color: #F0D2B0;     /* Light beige */
+            --accent-color: #8B4513;        /* Darker brown */
+            --background-color: #F5E6D3;    /* Soft beige background */
+            --text-color: #5D4037;          /* Deep brown for text */
+            --red-accent: #B71C1C;          /* Deep red for subtle accents */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .essay-generator-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--secondary-color);
+            box-shadow: 0 10px 30px rgba(93, 64, 55, 0.1);
+            border-radius: 12px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-control, .form-select {
+            border: 1px solid #D7CCC8;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            background-color: #FFFFFF;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(198, 148, 100, 0.1);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .btn-primary:active {
+            background-color: var(--red-accent);
+        }
+
+        #generated-essay {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            font-family: 'Roboto Slab', serif;
+            line-height: 1.8;
+            border: 1px solid #D7CCC8;
+        }
+
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .essay-generator-container {
+                padding: 1rem;
+                margin: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="essay-generator-container">
+            <h2 class="section-title">University Essay Generator</h2>
+            
+            <form>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" placeholder="Enter your full name">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Location</label>
+                        <input type="text" class="form-control" placeholder="Your current city/state">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Age</label>
+                        <input type="number" class="form-control" placeholder="Your age">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Grade</label>
+                        <input type="text" class="form-control" placeholder="Current grade level">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Worst Subject</label>
+                        <input type="text" class="form-control" placeholder="Subject you find challenging">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Best Subject</label>
+                        <input type="text" class="form-control" placeholder="Subject you excel in">
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Essay Tone</label>
+                    <select class="form-select">
+                        <option>Select Tone</option>
+                        <option>Professional</option>
+                        <option>Conversational</option>
+                        <option>Inspirational</option>
+                        <option>Analytical</option>
+                    </select>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary">Generate Essay</button>
+                </div>
+            </form>
+            
+            <div id="generated-essay" class="mt-4">
+                <h3 class="text-center text-muted">Your personalized essay will appear here</h3>
+                <p class="text-center text-muted">Click "Generate Essay" to begin</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
